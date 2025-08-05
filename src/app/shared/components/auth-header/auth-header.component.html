@@ -1,0 +1,41 @@
+<header class="auth-header">
+  <div class="auth-header-container">
+    <!-- Logo and Brand -->
+    <div class="brand-section">
+      <div class="logo" (click)="navigateToHome()">
+        <img src="assets/images/logo.png" alt="Dr Ankur Goswami" title="Dr Ankur Goswami" />
+        <span class="brand-name">Dr Ankur Goswami</span>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="auth-nav">
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="fa fa-home"></i>
+            Home
+          </a>
+        </li>
+        <li>
+          <a routerLink="/about" routerLinkActive="active">
+            <i class="fa fa-info-circle"></i>
+            About
+          </a>
+        </li>
+        <li>
+          <a routerLink="/contact" routerLinkActive="active">
+            <i class="fa fa-phone"></i>
+            Contact
+          </a>
+        </li>
+        <li>
+          <a routerLink="/appointment" routerLinkActive="active">
+            <i class="fa fa-calendar"></i>
+            Book Appointment
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

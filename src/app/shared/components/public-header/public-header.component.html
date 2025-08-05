@@ -1,0 +1,195 @@
+<!-- Main Header-->
+<header class="main-header header_style_2">
+
+  <!--Header Top Two-->
+  <div class="header-top-two">
+    <div class="auto-container">
+      <div class="clearfix">
+        <!--Top Left-->
+        <div class="top-left">
+          <ul class="header-info-list">
+            <li><span class="icon fa fa-envelope"></span>info&#64;ankurgoswami.com</li>
+            <li><span class="icon fa fa-clock-o"></span>Mon to Fri : 9:00am to 6:00pm</li>
+            <li><span class="icon fa fa-share-alt"></span>Social</li>
+          </ul>
+        </div>
+        <!--Top Right-->
+        <div class="top-right">
+          <div class="btn-box">
+		  <a href="{{apiUrl}}" rel="noopener" class="login-btn">
+              <i class="fa fa-sign-in"></i>
+              Login
+            </a>
+            <a routerLink="/contact" class="quote-btn">Book Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Header-Upper-->
+  <div class="header-upper">
+    <div class="auto-container">
+      <div class="clearfix">
+
+        <div class="pull-left logo-box">
+          <div class="logo">
+            <a routerLink="/">
+              <img src="assets/images/logo.png" alt="Dr Ankur Goswami" title="Dr Ankur Goswami" />
+            </a>
+          </div>
+        </div>
+
+        <div class="nav-outer clearfix">
+
+          <!-- Main Menu -->
+          <nav class="main-menu navbar-expand-md">
+            <div class="navbar-header">
+              <button 
+                class="navbar-toggler" 
+                type="button" 
+                (click)="toggleMobileMenu()"
+                [attr.aria-expanded]="isMenuOpen"
+                aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+
+            <div class="navbar-collapse collapse clearfix" 
+                 [class.show]="isMenuOpen" 
+                 id="navbarSupportedContent">
+              <ul class="navigation clearfix">
+                <li [class.current]="isActiveRoute('/')">
+                  <a routerLink="/" 
+                     routerLinkActive="current" 
+                     [routerLinkActiveOptions]="{exact: true}"
+                     (click)="closeMobileMenu()">Home</a>
+                </li>
+                <li [class.current]="isActiveRoute('/about')">
+                  <a routerLink="/about" 
+                     routerLinkActive="current"
+                     (click)="closeMobileMenu()">About</a>
+                </li>
+                <li [class.current]="isActiveRoute('/skills')">
+                  <a routerLink="/skills" 
+                     routerLinkActive="current"
+                     (click)="closeMobileMenu()">Skills</a>
+                </li>
+                <li [class.current]="isActiveRoute('/articles')">
+                  <a routerLink="/articles" 
+                     routerLinkActive="current"
+                     (click)="closeMobileMenu()">Articles</a>
+                </li>
+                <li [class.current]="isActiveRoute('/cases')">
+                  <a routerLink="/cases" 
+                     routerLinkActive="current"
+                     (click)="closeMobileMenu()">Cases Details</a>
+                </li>
+                <li [class.current]="isActiveRoute('/blog')">
+                  <a routerLink="/blog" 
+                     routerLinkActive="current"
+                     (click)="closeMobileMenu()">Blog</a>
+                </li>
+                <li [class.current]="isActiveRoute('/contact')">
+                  <a routerLink="/contact" 
+                     routerLinkActive="current"
+                     (click)="closeMobileMenu()">Contact</a>
+                </li>
+                <li class="login-menu-item">
+                  <a href="{{apiUrl}}" rel="noopener">
+                    <i class="fa fa-sign-in"></i>
+                    Login
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+          </nav>
+
+        </div>
+
+        <!--Support Box-->
+        <div class="support-box">
+          <div class="icon-box">
+            <span class="icon fa fa-phone"></span>
+          </div>
+          <div class="info">
+            <span class="text">For Support Call</span>
+            <div class="number">800-369-8527</div>
+          </div>
+        </div>
+
+        <!--Search Box-->
+        <div class="search-box-outer">
+          <div class="dropdown">
+            <button class="search-box-btn dropdown-toggle" 
+                    type="button" 
+                    id="dropdownMenu3" 
+                    data-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false">
+              <span class="fa fa-search"></span>
+            </button>
+            <ul class="dropdown-menu pull-right search-panel" aria-labelledby="dropdownMenu3">
+              <li class="panel-outer">
+                <div class="form-container">
+                  <form method="post" (submit)="onSearchSubmit($event)">
+                    <div class="form-group">
+                      <input type="search" 
+                             name="field-name" 
+                             placeholder="Search Here" 
+                             required>
+                      <button type="submit" class="search-btn">
+                        <span class="fa fa-search"></span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--Sticky Header-->
+  <div class="sticky-header">
+    <div class="auto-container">
+      <div class="clearfix">
+        <!--Logo-->
+        <div class="logo pull-left">
+          <a routerLink="/" title="">
+            <img src="assets/images/logo-small.png" alt="" title="">
+          </a>
+        </div>
+
+        <!--Right Col-->
+        <div class="right-col pull-right">
+          <!-- Main Menu -->
+          <nav class="main-menu navbar-expand-md">
+            <div class="navbar-collapse collapse clearfix" id="navbarSupportedContent1">
+              <ul class="navigation clearfix">
+                <li><a routerLink="/" routerLinkActive="current" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+                <li><a routerLink="/about" routerLinkActive="current">About</a></li>
+                <li><a routerLink="/articles" routerLinkActive="current">Articles</a></li>
+                <li><a routerLink="/contact" routerLinkActive="current">Contact</a></li>
+                <li class="login-menu-item">
+                  <a href="{{apiUrl}}" rel="noopener">
+                    <i class="fa fa-sign-in"></i>
+                    Login
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</header>

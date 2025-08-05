@@ -1,0 +1,112 @@
+<footer class="auth-footer">
+  <div class="auth-footer-container">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+      <div class="footer-section">
+        <!-- Brand Section -->
+        <div class="footer-brand">
+          <div class="footer-logo" (click)="navigateToHome()">
+            <img src="assets/images/logo.png" alt="Dr Ankur Goswami" />
+          </div>
+          <p class="brand-description">
+            Providing exceptional healthcare services with a focus on patient care and medical excellence.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="social-link" title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" title="LinkedIn">
+              <i class="fa fa-linkedin"></i>
+            </a>
+            <a href="#" class="social-link" title="Instagram">
+              <i class="fa fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a routerLink="/" (click)="navigateToHome()">Home</a></li>
+            <li><a routerLink="/about" (click)="navigateToAbout()">About Us</a></li>
+            <li><a routerLink="/contact" (click)="navigateToContact()">Contact</a></li>
+            <li><a routerLink="/appointment" (click)="navigateToAppointment()">Book Appointment</a></li>
+            <li><a routerLink="/doctors">Our Doctors</a></li>
+            <li><a routerLink="/services">Services</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <!-- Services -->
+        <div class="footer-services">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Spinal Surgery</a></li>
+            <li><a href="#">Orthopedic Care</a></li>
+            <li><a href="#">Physical Therapy</a></li>
+            <li><a href="#">Pain Management</a></li>
+            <li><a href="#">Emergency Care</a></li>
+            <li><a href="#">Telemedicine</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <!-- Contact Info -->
+        <div class="footer-contact">
+          <h4>Contact Information</h4>
+          <div class="contact-item">
+            <i class="fa fa-map-marker"></i>
+            <div>
+              <p>123 Medical Center Dr</p>
+              <p>Healthcare City, HC 12345</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa fa-phone"></i>
+            <div>
+              <p>+1 (555) 123-4567</p>
+              <p>Emergency: +1 (555) 999-8888</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa fa-envelope"></i>
+            <div>
+              <p>info&#64;ankurgoswami.com</p>
+              <p>appointments&#64;ankurgoswami.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <i class="fa fa-clock-o"></i>
+            <div>
+              <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
+              <p>Sat: 9:00 AM - 2:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; 2024 Dr Ankur Goswami. All rights reserved.</p>
+        </div>
+        <div class="footer-bottom-links">
+          <a routerLink="/privacy-policy" (click)="navigateToPrivacy()">Privacy Policy</a>
+          <a routerLink="/terms-of-service" (click)="navigateToTerms()">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

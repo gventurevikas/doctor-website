@@ -1,0 +1,45 @@
+// Modern Bootstrap 5 imports using @use
+@use '../../node_modules/bootstrap/scss/functions';
+@use '../../node_modules/bootstrap/scss/variables';
+@use '../../node_modules/bootstrap/scss/variables-dark';
+@use '../../node_modules/bootstrap/scss/maps';
+@use '../../node_modules/bootstrap/scss/mixins';
+@use '../../node_modules/bootstrap/scss/utilities';
+
+// Bootstrap components
+@use '../../node_modules/bootstrap/scss/root';
+@use '../../node_modules/bootstrap/scss/reboot';
+@use '../../node_modules/bootstrap/scss/type';
+@use '../../node_modules/bootstrap/scss/images';
+@use '../../node_modules/bootstrap/scss/containers';
+@use '../../node_modules/bootstrap/scss/grid';
+@use '../../node_modules/bootstrap/scss/tables';
+@use '../../node_modules/bootstrap/scss/forms';
+@use '../../node_modules/bootstrap/scss/buttons';
+@use '../../node_modules/bootstrap/scss/transitions';
+@use '../../node_modules/bootstrap/scss/dropdown';
+@use '../../node_modules/bootstrap/scss/button-group';
+@use '../../node_modules/bootstrap/scss/nav';
+@use '../../node_modules/bootstrap/scss/navbar';
+@use '../../node_modules/bootstrap/scss/card';
+@use '../../node_modules/bootstrap/scss/accordion';
+@use '../../node_modules/bootstrap/scss/breadcrumb';
+@use '../../node_modules/bootstrap/scss/pagination';
+@use '../../node_modules/bootstrap/scss/badge';
+@use '../../node_modules/bootstrap/scss/alert';
+@use '../../node_modules/bootstrap/scss/progress';
+@use '../../node_modules/bootstrap/scss/list-group';
+@use '../../node_modules/bootstrap/scss/close';
+@use '../../node_modules/bootstrap/scss/toasts';
+@use '../../node_modules/bootstrap/scss/modal';
+@use '../../node_modules/bootstrap/scss/tooltip';
+@use '../../node_modules/bootstrap/scss/popover';
+@use '../../node_modules/bootstrap/scss/carousel';
+@use '../../node_modules/bootstrap/scss/spinners';
+@use '../../node_modules/bootstrap/scss/offcanvas';
+@use '../../node_modules/bootstrap/scss/placeholders';
+@use '../../node_modules/bootstrap/scss/helpers';
+@use '../../node_modules/bootstrap/scss/utilities/api';
+
+// Import medical customizations
+@use './medical-bootstrap';

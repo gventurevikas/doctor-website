@@ -1,0 +1,36 @@
+<svg viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Skull - side view profile -->
+  <path d="M60 25 C45 25, 35 35, 35 50 C35 65, 45 75, 60 75 C75 75, 85 65, 85 50 C85 35, 75 25, 60 25 Z" 
+        fill="none" stroke="currentColor" stroke-width="3"/>
+  
+  <!-- Jaw line -->
+  <path d="M35 50 Q60 75, 85 50" 
+        fill="none" stroke="currentColor" stroke-width="3"/>
+  
+  <!-- Teeth - upper and lower -->
+  <path d="M40 48 L45 52 M50 48 L55 52 M60 48 L65 52 M70 48 L75 52" 
+        stroke="currentColor" stroke-width="2"/>
+  <path d="M40 52 L45 56 M50 52 L55 56 M60 52 L65 56 M70 52 L75 56" 
+        stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Eye socket -->
+  <path d="M50 40 Q60 45, 70 40" 
+        fill="none" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Ear canal -->
+  <path d="M75 45 Q80 50, 75 55" 
+        fill="none" stroke="currentColor" stroke-width="2"/>
+  
+  <!-- Cervical Spine - curved vertebrae -->
+  <path d="M45 80 L55 80 L55 88 L45 88 Z" fill="currentColor"/>
+  <path d="M45 88 L55 88 L55 96 L45 96 Z" fill="currentColor"/>
+  <path d="M45 96 L55 96 L55 104 L45 104 Z" fill="currentColor"/>
+  <path d="M45 104 L55 104 L55 112 L45 112 Z" fill="currentColor"/>
+  <path d="M45 112 L55 112 L55 120 L45 120 Z" fill="currentColor"/>
+  <path d="M45 120 L55 120 L55 128 L45 128 Z" fill="currentColor"/>
+  <path d="M45 128 L55 128 L55 136 L45 136 Z" fill="currentColor"/>
+  <path d="M45 136 L55 136 L55 144 L45 144 Z" fill="currentColor"/>
+  
+  <!-- Spine end with protrusion -->
+  <path d="M45 144 L50 152 L55 144 Z" fill="currentColor"/>
+</svg> 

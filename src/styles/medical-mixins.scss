@@ -1,0 +1,213 @@
+// CareCall Medical Mixins
+// ===================================
+
+// Import variables
+@use './medical-variables' as *;
+
+// Button Mixin
+@mixin carecall-button(
+  $bg-color: $carecall-primary,
+  $text-color: $carecall-white,
+  $border-color: $bg-color,
+  $hover-bg: darken($bg-color, 10%),
+  $hover-text: $text-color,
+  $hover-border: $hover-bg
+) {
+  position: relative;
+  display: inline-block;
+  padding: 11px 25px;
+  background-color: $bg-color;
+  color: $text-color;
+  border: 2px solid $border-color;
+  border-radius: $carecall-border-radius-base;
+  font-size: $carecall-font-size-base;
+  font-weight: $carecall-font-weight-semibold;
+  font-family: $carecall-font-family-secondary;
+  text-decoration: none;
+  text-align: center;
+  text-transform: capitalize;
+  line-height: 1.5;
+  cursor: pointer;
+  user-select: none;
+  transition: all $carecall-transition-base ease;
+  
+  &:hover {
+    background-color: $hover-bg;
+    color: $hover-text;
+    border-color: $hover-border;
+    text-decoration: none;
+    transform: translateY(-1px);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($bg-color, 0.25);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    
+    &:hover {
+      background-color: $bg-color;
+      color: $text-color;
+      transform: none;
+    }
+  }
+}
+
+// Card Mixin
+@mixin carecall-card($padding: $carecall-spacing-lg, $shadow: $carecall-shadow-md) {
+  background-color: $carecall-white;
+  border-radius: $carecall-border-radius-lg;
+  box-shadow: $shadow;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: $padding;
+  transition: all $carecall-transition-base ease;
+  
+  &:hover {
+    box-shadow: $carecall-shadow-lg;
+    transform: translateY(-2px);
+  }
+}
+
+// Responsive Mixin
+@mixin carecall-responsive($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$carecall-breakpoint-xs - 1px}) {
+      @content;
+    }
+  }
+  @else if $breakpoint == sm {
+    @media (min-width: $carecall-breakpoint-sm) {
+      @content;
+    }
+  }
+  @else if $breakpoint == md {
+    @media (min-width: $carecall-breakpoint-md) {
+      @content;
+    }
+  }
+  @else if $breakpoint == lg {
+    @media (min-width: $carecall-breakpoint-lg) {
+      @content;
+    }
+  }
+  @else if $breakpoint == xl {
+    @media (min-width: $carecall-breakpoint-xl) {
+      @content;
+    }
+  }
+  @else if $breakpoint == xxl {
+    @media (min-width: $carecall-breakpoint-xxl) {
+      @content;
+    }
+  }
+}
+
+// Container Mixin
+@mixin carecall-container($max-width: $carecall-container-xl) {
+  position: relative;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $carecall-spacing-md;
+  
+  @include carecall-responsive(lg) {
+    padding: 0 $carecall-spacing-lg;
+  }
+}
+
+// Text Truncate Mixin
+@mixin carecall-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Clearfix Mixin
+@mixin carecall-clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Gradient Mixin
+@mixin carecall-gradient($start-color, $end-color, $direction: to right) {
+  background: linear-gradient($direction, $start-color, $end-color);
+}
+
+// Animation Mixin
+@mixin carecall-animation($name, $duration: $carecall-transition-base, $timing: ease-in-out, $delay: 0s, $iteration: 1, $direction: normal, $fill: both) {
+  animation: $name $duration $timing $delay $iteration $direction $fill;
+}
+
+// Position Absolute Center Mixin
+@mixin carecall-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Flexbox Center Mixin
+@mixin carecall-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Icon Mixin
+@mixin carecall-icon($size: 24px, $color: currentColor) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  color: $color;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+// Medical Status Badge Mixin
+@mixin carecall-status-badge($bg-color, $text-color: $carecall-white) {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $carecall-border-radius-xl;
+  font-size: $carecall-font-size-sm;
+  font-weight: $carecall-font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Form Control Mixin
+@mixin carecall-form-control {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  font-size: $carecall-font-size-base;
+  font-family: $carecall-font-family-primary;
+  line-height: $carecall-line-height-normal;
+  color: $carecall-text-primary;
+  background-color: $carecall-white;
+  border: 1px solid $carecall-gray-300;
+  border-radius: $carecall-border-radius-base;
+  transition: border-color $carecall-transition-base ease-in-out, box-shadow $carecall-transition-base ease-in-out;
+  
+  &:focus {
+    outline: none;
+    border-color: $carecall-primary;
+    box-shadow: 0 0 0 3px rgba($carecall-primary, 0.1);
+  }
+  
+  &::placeholder {
+    color: $carecall-gray-400;
+  }
+  
+  &:disabled {
+    background-color: $carecall-gray-50;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

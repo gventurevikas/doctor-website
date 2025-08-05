@@ -1,0 +1,530 @@
+// CareCall Medical Layouts
+// ===================================
+
+// Import variables and mixins
+@use './medical-variables' as *;
+@use './medical-mixins' as *;
+
+// Main Layout Sections
+.medical-section {
+  position: relative;
+  padding: $carecall-spacing-5xl 0;
+  
+  &.section-padding-sm {
+    padding: $carecall-spacing-3xl 0;
+  }
+  
+  &.section-padding-lg {
+    padding: 120px 0;
+  }
+  
+  &.no-padding-top {
+    padding-top: 0;
+  }
+  
+  &.no-padding-bottom {
+    padding-bottom: 0;
+  }
+}
+
+// Fluid Sections
+.fluid-section-one {
+  position: relative;
+  min-height: 400px;
+  
+  .outer-container {
+    position: relative;
+    min-height: inherit;
+    background-color: $carecall-gray-50;
+  }
+  
+  .image-column {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
+    .image-box {
+      position: relative;
+      display: none;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  .content-column {
+    position: relative;
+    float: right;
+    width: 50%;
+    
+    .inner-column {
+      position: relative;
+      width: 100%;
+      padding: $carecall-spacing-5xl 45px $carecall-spacing-4xl;
+      background: $carecall-secondary;
+      
+      .title-box {
+        position: relative;
+        width: 50%;
+        float: left;
+        
+        .box-inner {
+          position: relative;
+          padding-right: 50px;
+        }
+        
+        h2 {
+          position: relative;
+          color: $carecall-white;
+          font-size: $carecall-font-size-5xl;
+          font-weight: $carecall-font-weight-semibold;
+          line-height: $carecall-line-height-tight;
+          margin-bottom: $carecall-spacing-lg;
+          text-transform: capitalize;
+        }
+        
+        .text {
+          position: relative;
+          padding-left: 50px;
+          color: $carecall-text-light;
+          font-size: $carecall-font-size-base;
+          line-height: $carecall-line-height-relaxed;
+          
+          &::before {
+            position: absolute;
+            content: "🏥";
+            left: 0;
+            top: 0;
+            color: $carecall-primary;
+            font-size: $carecall-font-size-5xl;
+            line-height: 1em;
+          }
+        }
+      }
+      
+      .carousel-box {
+        position: relative;
+        float: right;
+        width: 50%;
+        
+        .box-inner {
+          position: relative;
+          padding: $carecall-spacing-5xl 40px $carecall-spacing-4xl;
+          background-color: $carecall-gray-100;
+          background-repeat: repeat;
+        }
+        
+        .quote-icon {
+          position: absolute;
+          right: 60px;
+          top: -28px;
+          color: $carecall-primary;
+          font-size: 60px;
+          line-height: 1em;
+        }
+      }
+    }
+  }
+}
+
+// Services Section
+.services-section {
+  position: relative;
+  background-color: $carecall-gray-50;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: $carecall-spacing-4xl;
+    
+    .title {
+      font-size: $carecall-font-size-4xl;
+      font-weight: $carecall-font-weight-bold;
+      color: $carecall-text-primary;
+      margin-bottom: $carecall-spacing-md;
+    }
+    
+    .text {
+      color: $carecall-text-muted;
+      font-size: $carecall-font-size-lg;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $carecall-spacing-xl;
+    
+    .service-block {
+      @include carecall-card();
+      text-align: center;
+      padding: $carecall-spacing-xl;
+      
+      .icon-box {
+        margin-bottom: $carecall-spacing-lg;
+        
+        .icon {
+          @include carecall-icon(60px, $carecall-primary);
+        }
+      }
+      
+      h3 {
+        font-size: $carecall-font-size-xl;
+        font-weight: $carecall-font-weight-semibold;
+        color: $carecall-text-primary;
+        margin-bottom: $carecall-spacing-md;
+      }
+      
+      .text {
+        color: $carecall-text-muted;
+        line-height: $carecall-line-height-relaxed;
+        margin-bottom: $carecall-spacing-lg;
+      }
+      
+      .read-more {
+        color: $carecall-primary;
+        font-weight: $carecall-font-weight-medium;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// About Section
+.about-section {
+  position: relative;
+  
+  .row {
+    display: flex;
+    align-items: center;
+    gap: $carecall-spacing-4xl;
+    
+    .image-column,
+    .content-column {
+      flex: 1;
+    }
+    
+    .image-column {
+      .image {
+        position: relative;
+        border-radius: $carecall-border-radius-lg;
+        overflow: hidden;
+        
+        img {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+        
+        .video-link {
+          @include carecall-absolute-center();
+          @include carecall-flex-center();
+          width: 80px;
+          height: 80px;
+          background-color: rgba($carecall-white, 0.9);
+          border-radius: $carecall-border-radius-full;
+          color: $carecall-primary;
+          font-size: $carecall-font-size-2xl;
+          text-decoration: none;
+          transition: all $carecall-transition-base ease;
+          
+          &:hover {
+            background-color: $carecall-primary;
+            color: $carecall-white;
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+      }
+    }
+    
+    .content-column {
+      .content {
+        h2 {
+          font-size: $carecall-font-size-4xl;
+          font-weight: $carecall-font-weight-bold;
+          color: $carecall-text-primary;
+          margin-bottom: $carecall-spacing-lg;
+          line-height: $carecall-line-height-tight;
+        }
+        
+        .text {
+          color: $carecall-text-muted;
+          font-size: $carecall-font-size-base;
+          line-height: $carecall-line-height-relaxed;
+          margin-bottom: $carecall-spacing-xl;
+        }
+        
+        .list-style-one {
+          margin-bottom: $carecall-spacing-xl;
+        }
+        
+        .btn-box {
+          .theme-btn {
+            @include carecall-button();
+          }
+        }
+      }
+    }
+  }
+}
+
+// Counter Section
+.counter-section {
+  position: relative;
+  @include carecall-gradient($carecall-primary, $carecall-primary-dark);
+  padding: $carecall-spacing-4xl 0;
+  
+  .fact-counter {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $carecall-spacing-xl;
+    
+    .counter-block {
+      text-align: center;
+      color: $carecall-white;
+      
+      .count-outer {
+        font-size: $carecall-font-size-6xl;
+        font-weight: $carecall-font-weight-bold;
+        margin-bottom: $carecall-spacing-sm;
+      }
+      
+      .counter-title {
+        font-size: $carecall-font-size-lg;
+        font-weight: $carecall-font-weight-medium;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+// Team Section
+.team-section {
+  position: relative;
+  background-color: $carecall-gray-50;
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: $carecall-spacing-xl;
+    
+    .team-block {
+      @include carecall-card();
+      text-align: center;
+      padding: 0;
+      overflow: hidden;
+      
+      .image {
+        position: relative;
+        overflow: hidden;
+        
+        img {
+          width: 100%;
+          height: 300px;
+          object-fit: cover;
+          transition: transform $carecall-transition-base ease;
+        }
+        
+                  .overlay-box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            @include carecall-gradient(transparent, rgba($carecall-secondary, 0.8), to top);
+            padding: $carecall-spacing-lg;
+          color: $carecall-white;
+          transform: translateY(100%);
+          transition: transform $carecall-transition-base ease;
+          
+          .social-box {
+            display: flex;
+            justify-content: center;
+            gap: $carecall-spacing-sm;
+            
+            a {
+              @include carecall-flex-center();
+              width: 40px;
+              height: 40px;
+              background-color: rgba($carecall-white, 0.2);
+              color: $carecall-white;
+              border-radius: $carecall-border-radius-full;
+              text-decoration: none;
+              transition: all $carecall-transition-base ease;
+              
+              &:hover {
+                background-color: $carecall-primary;
+                transform: translateY(-3px);
+              }
+            }
+          }
+        }
+      }
+      
+      .lower-content {
+        padding: $carecall-spacing-lg;
+        
+        h3 {
+          font-size: $carecall-font-size-xl;
+          font-weight: $carecall-font-weight-semibold;
+          color: $carecall-text-primary;
+          margin-bottom: $carecall-spacing-xs;
+        }
+        
+        .designation {
+          color: $carecall-primary;
+          font-weight: $carecall-font-weight-medium;
+        }
+      }
+      
+      &:hover {
+        .image {
+          img {
+            transform: scale(1.1);
+          }
+          
+          .overlay-box {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Contact Section
+.contact-section {
+  position: relative;
+  
+  .contact-form {
+    @include carecall-card($carecall-spacing-2xl);
+    max-width: 600px;
+    margin: 0 auto;
+    
+    .form-title {
+      text-align: center;
+      margin-bottom: $carecall-spacing-xl;
+      
+      h2 {
+        font-size: $carecall-font-size-4xl;
+        font-weight: $carecall-font-weight-bold;
+        color: $carecall-text-primary;
+        margin-bottom: $carecall-spacing-md;
+      }
+      
+      .text {
+        color: $carecall-text-muted;
+        font-size: $carecall-font-size-base;
+      }
+    }
+    
+    .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: $carecall-spacing-lg;
+      margin-bottom: $carecall-spacing-lg;
+    }
+    
+    .btn-box {
+      text-align: center;
+      
+      .theme-btn {
+        @include carecall-button();
+        padding: 15px 40px;
+      }
+    }
+  }
+  
+  .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: $carecall-spacing-xl;
+    margin-top: $carecall-spacing-4xl;
+    
+    .contact-block {
+      text-align: center;
+      
+      .icon-box {
+        @include carecall-flex-center();
+        width: 80px;
+        height: 80px;
+        background-color: $carecall-primary;
+        color: $carecall-white;
+        border-radius: $carecall-border-radius-full;
+        margin: 0 auto $carecall-spacing-lg;
+        font-size: $carecall-font-size-2xl;
+      }
+      
+      h3 {
+        font-size: $carecall-font-size-xl;
+        font-weight: $carecall-font-weight-semibold;
+        color: $carecall-text-primary;
+        margin-bottom: $carecall-spacing-sm;
+      }
+      
+      .text {
+        color: $carecall-text-muted;
+        line-height: $carecall-line-height-relaxed;
+      }
+    }
+  }
+}
+
+// Responsive Layouts
+@include carecall-responsive(md) {
+  .fluid-section-one {
+    .image-column,
+    .content-column {
+      width: 100%;
+      position: relative;
+    }
+    
+    .content-column .inner-column {
+      .title-box,
+      .carousel-box {
+        width: 100%;
+        float: none;
+      }
+    }
+  }
+  
+  .about-section .row {
+    flex-direction: column;
+  }
+  
+  .services-grid,
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fact-counter {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@include carecall-responsive(sm) {
+  .medical-section {
+    padding: $carecall-spacing-3xl 0;
+  }
+  
+  .fact-counter {
+    grid-template-columns: 1fr;
+  }
+}

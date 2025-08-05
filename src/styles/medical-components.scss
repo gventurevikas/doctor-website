@@ -1,0 +1,501 @@
+// CareCall Medical Components
+// ===================================
+
+// Import variables and mixins
+@use './medical-variables' as *;
+@use './medical-mixins' as *;
+
+// Page Wrapper
+.page-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  min-width: 300px;
+  overflow-x: hidden;
+}
+
+// Container
+.auto-container {
+  @include carecall-container();
+}
+
+.medium-container {
+  @include carecall-container($carecall-container-md);
+}
+
+// Header Styles
+.main-header {
+  position: relative;
+  z-index: $carecall-z-sticky;
+  
+  // Header Top
+  .header-top-two {
+    background-color: $carecall-secondary;
+    padding: 10px 0;
+    
+    .auto-container {
+      @include carecall-clearfix();
+    }
+    
+    .top-left {
+      float: left;
+      
+      .header-info-list {
+        display: flex;
+        gap: $carecall-spacing-lg;
+        
+        li {
+          color: $carecall-text-light;
+          font-size: $carecall-font-size-sm;
+          
+          .icon {
+            color: $carecall-primary;
+            margin-right: $carecall-spacing-sm;
+          }
+        }
+      }
+    }
+    
+    .top-right {
+      float: right;
+      
+      .quote-btn {
+        @include carecall-button();
+        padding: 8px 20px;
+        font-size: $carecall-font-size-sm;
+      }
+    }
+  }
+  
+  // Header Upper
+  .header-upper {
+    background-color: $carecall-white;
+    box-shadow: $carecall-shadow-base;
+    padding: 15px 0;
+    
+    .logo-box {
+      float: left;
+      
+      .logo img {
+        max-height: 50px;
+        width: auto;
+      }
+    }
+    
+    .nav-outer {
+      float: right;
+      @include carecall-flex-center();
+      gap: $carecall-spacing-lg;
+    }
+    
+    .support-box {
+      display: flex;
+      align-items: center;
+      gap: $carecall-spacing-sm;
+      
+      .support {
+        color: $carecall-text-secondary;
+        font-size: $carecall-font-size-sm;
+        
+        .icon {
+          color: $carecall-primary;
+          margin-left: $carecall-spacing-sm;
+        }
+      }
+      
+      .support-number {
+        color: $carecall-secondary;
+        font-weight: $carecall-font-weight-bold;
+        font-size: $carecall-font-size-lg;
+      }
+    }
+    
+    .search-box-outer {
+      .search-box-btn {
+        background-color: $carecall-primary;
+        color: $carecall-white;
+        border: none;
+        border-radius: $carecall-border-radius-base;
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: all $carecall-transition-base ease;
+        
+        &:hover {
+          background-color: $carecall-primary-dark;
+        }
+      }
+    }
+  }
+}
+
+// Navigation
+.main-menu {
+  .navigation {
+    display: flex;
+    gap: $carecall-spacing-lg;
+    
+    li {
+      position: relative;
+      
+      > a {
+        color: $carecall-text-primary;
+        font-weight: $carecall-font-weight-medium;
+        font-size: $carecall-font-size-base;
+        padding: 10px 0;
+        text-decoration: none;
+        transition: color $carecall-transition-base ease;
+        
+        &:hover {
+          color: $carecall-primary;
+        }
+      }
+      
+      &.current > a,
+      &:hover > a {
+        color: $carecall-primary;
+      }
+      
+      // Dropdown
+      .sub-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $carecall-white;
+        box-shadow: $carecall-shadow-lg;
+        border-radius: $carecall-border-radius-base;
+        min-width: 220px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all $carecall-transition-base ease;
+        z-index: $carecall-z-dropdown;
+        
+        li {
+          display: block;
+          border-bottom: 1px solid $carecall-gray-100;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+          
+          a {
+            display: block;
+            padding: 12px 20px;
+            color: $carecall-text-secondary;
+            font-size: $carecall-font-size-sm;
+            
+            &:hover {
+              color: $carecall-primary;
+              background-color: $carecall-gray-50;
+            }
+          }
+        }
+      }
+      
+      &:hover .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+// Buttons
+.btn-style-one {
+  @include carecall-button();
+}
+
+.btn-style-two {
+  @include carecall-button();
+  padding: 15px 32px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.theme-btn {
+  @include carecall-button();
+}
+
+// Cards
+.medical-card {
+  @include carecall-card();
+}
+
+.card-medical {
+  @include carecall-card();
+}
+
+// Page Title
+.page-title {
+  position: relative;
+  background-color: $carecall-secondary;
+  padding: 60px 0;
+  text-align: center;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba($carecall-secondary, 0.8), rgba($carecall-secondary, 0.9));
+  }
+  
+  .auto-container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  h1 {
+    color: $carecall-white;
+    font-size: $carecall-font-size-5xl;
+    font-weight: $carecall-font-weight-bold;
+    margin-bottom: $carecall-spacing-md;
+  }
+  
+  .breadcrumb {
+    @include carecall-flex-center();
+    justify-content: center;
+    gap: $carecall-spacing-sm;
+    
+    li {
+      color: $carecall-text-light;
+      font-size: $carecall-font-size-base;
+      
+      &::after {
+        content: '/';
+        margin-left: $carecall-spacing-sm;
+        color: $carecall-gray-400;
+      }
+      
+      &:last-child::after {
+        display: none;
+      }
+      
+      a {
+        color: $carecall-text-light;
+        text-decoration: none;
+        
+        &:hover {
+          color: $carecall-primary;
+        }
+      }
+    }
+  }
+}
+
+// Lists
+.list-style-one {
+  li {
+    position: relative;
+    color: $carecall-white;
+    font-size: $carecall-font-size-base;
+    font-weight: $carecall-font-weight-medium;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    
+    &::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $carecall-primary;
+      font-weight: $carecall-font-weight-bold;
+    }
+  }
+}
+
+.list-style-two {
+  li {
+    position: relative;
+    color: $carecall-text-secondary;
+    font-size: $carecall-font-size-base;
+    font-weight: $carecall-font-weight-medium;
+    margin-bottom: 20px;
+    padding-left: 54px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 40px;
+      height: 40px;
+      background-color: $carecall-primary;
+      border-radius: $carecall-border-radius-full;
+    }
+  }
+}
+
+// Forms
+.form-group {
+  margin-bottom: $carecall-spacing-lg;
+  
+  label {
+    display: block;
+    color: $carecall-text-primary;
+    font-weight: $carecall-font-weight-medium;
+    margin-bottom: $carecall-spacing-sm;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  select,
+  textarea {
+    @include carecall-form-control();
+  }
+  
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+}
+
+// Medical Status Classes
+.status-critical {
+  @include carecall-status-badge($carecall-danger);
+}
+
+.status-warning {
+  @include carecall-status-badge($carecall-warning);
+}
+
+.status-healthy {
+  @include carecall-status-badge($carecall-success);
+}
+
+.status-info {
+  @include carecall-status-badge($carecall-info);
+}
+
+// Video Box
+.video-box {
+  position: relative;
+  overflow: hidden;
+  border-radius: $carecall-border-radius-lg;
+  
+  .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .overlay-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    @include carecall-flex-center();
+    background: rgba($carecall-secondary, 0.3);
+    transition: all $carecall-transition-base ease;
+    
+    &:hover {
+      background: rgba($carecall-secondary, 0.5);
+    }
+    
+    span {
+      @include carecall-flex-center();
+      width: 80px;
+      height: 80px;
+      background-color: $carecall-white;
+      color: $carecall-primary;
+      border-radius: $carecall-border-radius-full;
+      font-size: $carecall-font-size-2xl;
+      transition: transform $carecall-transition-slow ease;
+      
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+// Tables
+.medical-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: $carecall-white;
+  border-radius: $carecall-border-radius-lg;
+  overflow: hidden;
+  box-shadow: $carecall-shadow-base;
+  
+  th,
+  td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid $carecall-gray-100;
+  }
+  
+  th {
+    background-color: $carecall-gray-50;
+    font-weight: $carecall-font-weight-semibold;
+    color: $carecall-text-primary;
+  }
+  
+  tbody tr:hover {
+    background-color: $carecall-gray-50;
+  }
+  
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+// Preloader
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $carecall-white;
+  z-index: 9999;
+  @include carecall-flex-center();
+  
+  &::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid $carecall-gray-200;
+    border-top: 4px solid $carecall-primary;
+    border-radius: $carecall-border-radius-full;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// Responsive adjustments
+@include carecall-responsive(md) {
+  .main-header {
+    .header-top-two {
+      .top-left .header-info-list {
+        flex-direction: column;
+        gap: $carecall-spacing-sm;
+      }
+    }
+    
+    .header-upper {
+      .nav-outer {
+        flex-direction: column;
+        gap: $carecall-spacing-md;
+      }
+    }
+  }
+  
+  .main-menu .navigation {
+    flex-direction: column;
+    gap: $carecall-spacing-sm;
+  }
+  
+  .page-title h1 {
+    font-size: $carecall-font-size-4xl;
+  }
+}

@@ -1,0 +1,364 @@
+// Dr Ankur Goswami Footer Styles
+.main-footer {
+  background: #2c3e50;
+  color: #ffffff;
+  position: relative;
+
+  .widgets-section {
+    padding: 80px 0 50px;
+
+    .footer-widget {
+      &.logo-widget {
+        .logo {
+          margin-bottom: 25px;
+
+          img {
+            max-height: 50px;
+            width: auto;
+          }
+        }
+
+        .text {
+          font-size: 16px;
+          line-height: 1.6;
+          color: #bdc3c7;
+          margin-bottom: 25px;
+        }
+
+        .list-style-one {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 25px 0;
+
+          li {
+            margin-bottom: 10px;
+            font-size: 15px;
+            color: #bdc3c7;
+
+            span {
+              color: #FF4555;
+              font-weight: 600;
+              margin-right: 5px;
+            }
+          }
+        }
+
+        .social-icon-one {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          gap: 10px;
+
+          li {
+            a {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 40px;
+              height: 40px;
+              background: #34495e;
+              border-radius: 50%;
+              color: #ffffff;
+              text-decoration: none;
+              transition: all 0.3s ease;
+
+              &:hover {
+                background: #FF4555;
+                transform: translateY(-3px);
+              }
+
+              span {
+                font-size: 16px;
+              }
+            }
+          }
+        }
+      }
+
+      &.links-widget {
+        h2 {
+          font-size: 20px;
+          font-weight: 700;
+          color: #ffffff;
+          margin-bottom: 25px;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #FF4555;
+          }
+        }
+
+        .footer-link {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          li {
+            margin-bottom: 10px;
+
+            a {
+              color: #bdc3c7;
+              text-decoration: none;
+              font-size: 15px;
+              transition: all 0.3s ease;
+              display: block;
+              padding: 5px 0;
+
+              &:hover {
+                color: #FF4555;
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+      }
+
+      &.posts-widget {
+        h2 {
+          font-size: 20px;
+          font-weight: 700;
+          color: #ffffff;
+          margin-bottom: 25px;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #FF4555;
+          }
+        }
+
+        .post {
+          margin-bottom: 20px;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #34495e;
+
+          &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+
+          .text {
+            a {
+              color: #ffffff;
+              text-decoration: none;
+              font-size: 16px;
+              font-weight: 600;
+              line-height: 1.4;
+              transition: color 0.3s ease;
+
+              &:hover {
+                color: #FF4555;
+              }
+            }
+          }
+
+          .post-date {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            gap: 15px;
+
+            li {
+              font-size: 13px;
+              color: #95a5a6;
+            }
+          }
+        }
+      }
+
+      &.newsletter-widget {
+        h2 {
+          font-size: 20px;
+          font-weight: 700;
+          color: #ffffff;
+          margin-bottom: 25px;
+          position: relative;
+
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #FF4555;
+          }
+        }
+
+        .text {
+          font-size: 15px;
+          line-height: 1.6;
+          color: #bdc3c7;
+          margin-bottom: 25px;
+        }
+
+        .newsletter-form {
+          .form-group {
+            margin-bottom: 15px;
+
+            input[type="email"] {
+              width: 100%;
+              padding: 12px 15px;
+              border: 1px solid #34495e;
+              border-radius: 5px;
+              background: #34495e;
+              color: #ffffff;
+              font-size: 14px;
+
+              &::placeholder {
+                color: #95a5a6;
+              }
+
+              &:focus {
+                outline: none;
+                border-color: #FF4555;
+                background: #3a5169;
+              }
+            }
+
+            .theme-btn {
+              &.btn-style-one {
+                width: 100%;
+                background: #FF4555;
+                color: #ffffff;
+                border: 2px solid #FF4555;
+                padding: 12px 30px;
+                border-radius: 5px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                  background: transparent;
+                  color: #FF4555;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    background: #1a252f;
+    padding: 25px 0;
+    border-top: 1px solid #34495e;
+
+    .copyright {
+      font-size: 14px;
+      color: #95a5a6;
+      margin: 0;
+    }
+
+    .footer-nav {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+      gap: 25px;
+
+      li {
+        a {
+          color: #95a5a6;
+          text-decoration: none;
+          font-size: 14px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #FF4555;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 991px) {
+  .main-footer {
+    .widgets-section {
+      padding: 60px 0 40px;
+    }
+
+    .footer-bottom {
+      .auto-container {
+        .row {
+          .column {
+            text-align: center;
+            margin-bottom: 20px;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .footer-nav {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .main-footer {
+    .widgets-section {
+      padding: 50px 0 30px;
+
+      .big-column {
+        margin-bottom: 40px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .footer-column {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .footer-bottom {
+      .footer-nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  .main-footer {
+    .widgets-section {
+      .footer-widget {
+        &.logo-widget {
+          .social-icon-one {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+}

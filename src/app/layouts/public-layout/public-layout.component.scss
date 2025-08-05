@@ -1,0 +1,136 @@
+// CareCall Theme Base Styles
+.page-wrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+// Preloader
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 999999;
+  background-color: #ffffff;
+  background-image: url('data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wjRLIBIaH3tLiGBwAHeBtlQG7iQSFoUlgP8hZlUaJSA4mSSmQl/KpAOAFSIUCACH5BAkKAAAALAAAAAAQABAAAAMyCI4iqx6K3BpWJCdWGlKRzxoJN4DCiRpS2sNVEO6hksz3N05Fm6/EFASG2BNlQ7KqSwUAOw==');
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+
+  &.loaded {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+// Main Content
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+// Auto Container
+.auto-container {
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// Clearfix
+.clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+// Scroll to Top
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: #FF4555;
+  color: #ffffff;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #e13d50;
+    transform: translateY(-3px);
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  span {
+    font-size: 18px;
+    line-height: 50px;
+  }
+}
+
+// Common Button Styles
+.theme-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #FF4555;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  border: 2px solid #FF4555;
+
+  &:hover {
+    background: transparent;
+    color: #FF4555;
+  }
+
+  &.btn-style-one {
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 15px 35px;
+  }
+}
+
+// Responsive
+@media (max-width: 767px) {
+  .auto-container {
+    padding: 0 20px;
+  }
+
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+
+    span {
+      font-size: 16px;
+      line-height: 45px;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+@use "sass:color";
+
+// CareCall Medical Variables
+// ===================================
+
+// Primary Brand Colors
+$carecall-primary: #FF4555;
+$carecall-primary-light: color.adjust($carecall-primary, $lightness: 10%);
+$carecall-primary-dark: color.adjust($carecall-primary, $lightness: -10%);
+
+// Secondary Colors
+$carecall-secondary: #00235a;
+$carecall-secondary-light: color.adjust($carecall-secondary, $lightness: 10%);
+$carecall-secondary-dark: color.adjust($carecall-secondary, $lightness: -10%);
+
+// Status Colors
+$carecall-success: #10b981;
+$carecall-warning: #f59e0b;
+$carecall-danger: #ef4444;
+$carecall-info: #3b82f6;
+
+// Neutral Colors
+$carecall-white: #ffffff;
+$carecall-gray-50: #f9f8fc;
+$carecall-gray-100: #f5f5f5;
+$carecall-gray-200: #e5e5e5;
+$carecall-gray-300: #d1d5db;
+$carecall-gray-400: #9ca3af;
+$carecall-gray-500: #6b7280;
+$carecall-gray-600: #4b5563;
+$carecall-gray-700: #374151;
+$carecall-gray-800: #1f2937;
+$carecall-gray-900: #111827;
+$carecall-black: #000000;
+
+// Text Colors
+$carecall-text-primary: #373737;
+$carecall-text-secondary: #555555;
+$carecall-text-muted: #777777;
+$carecall-text-light: #e5e5e5;
+
+// Typography
+$carecall-font-family-primary: 'Roboto', sans-serif;
+$carecall-font-family-secondary: 'Exo', sans-serif;
+
+// Font Sizes
+$carecall-font-size-xs: 12px;
+$carecall-font-size-sm: 14px;
+$carecall-font-size-base: 16px;
+$carecall-font-size-lg: 18px;
+$carecall-font-size-xl: 20px;
+$carecall-font-size-2xl: 24px;
+$carecall-font-size-3xl: 30px;
+$carecall-font-size-4xl: 36px;
+$carecall-font-size-5xl: 40px;
+$carecall-font-size-6xl: 48px;
+
+// Font Weights
+$carecall-font-weight-light: 300;
+$carecall-font-weight-normal: 400;
+$carecall-font-weight-medium: 500;
+$carecall-font-weight-semibold: 600;
+$carecall-font-weight-bold: 700;
+$carecall-font-weight-extrabold: 800;
+
+// Line Heights
+$carecall-line-height-tight: 1.3em;
+$carecall-line-height-normal: 1.5em;
+$carecall-line-height-relaxed: 1.7em;
+$carecall-line-height-loose: 1.8em;
+
+// Spacing
+$carecall-spacing-xs: 4px;
+$carecall-spacing-sm: 8px;
+$carecall-spacing-md: 16px;
+$carecall-spacing-lg: 24px;
+$carecall-spacing-xl: 32px;
+$carecall-spacing-2xl: 48px;
+$carecall-spacing-3xl: 64px;
+$carecall-spacing-4xl: 80px;
+$carecall-spacing-5xl: 100px;
+
+// Border Radius
+$carecall-border-radius-none: 0;
+$carecall-border-radius-sm: 2px;
+$carecall-border-radius-base: 3px;
+$carecall-border-radius-md: 6px;
+$carecall-border-radius-lg: 8px;
+$carecall-border-radius-xl: 12px;
+$carecall-border-radius-full: 50%;
+
+// Shadows
+$carecall-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+$carecall-shadow-base: 0 1px 3px rgba(0, 0, 0, 0.1);
+$carecall-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+$carecall-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+$carecall-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+
+// Z-Index
+$carecall-z-dropdown: 1000;
+$carecall-z-sticky: 1020;
+$carecall-z-fixed: 1030;
+$carecall-z-modal-backdrop: 1040;
+$carecall-z-modal: 1050;
+$carecall-z-popover: 1060;
+$carecall-z-tooltip: 1070;
+
+// Breakpoints
+$carecall-breakpoint-xs: 480px;
+$carecall-breakpoint-sm: 576px;
+$carecall-breakpoint-md: 768px;
+$carecall-breakpoint-lg: 992px;
+$carecall-breakpoint-xl: 1200px;
+$carecall-breakpoint-xxl: 1400px;
+
+// Container Max Widths
+$carecall-container-sm: 540px;
+$carecall-container-md: 720px;
+$carecall-container-lg: 960px;
+$carecall-container-xl: 1140px;
+$carecall-container-xxl: 1320px;
+
+// Transitions
+$carecall-transition-fast: 0.15s;
+$carecall-transition-base: 0.3s;
+$carecall-transition-slow: 0.5s;
+
+// Animation Easing
+$carecall-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+$carecall-ease-out: cubic-bezier(0, 0, 0.2, 1);
+$carecall-ease-in: cubic-bezier(0.4, 0, 1, 1);

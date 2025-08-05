@@ -1,0 +1,340 @@
+<!-- Appointment Booking Form -->
+<div class="appointment-booking-form">
+  <form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" class="booking-form">
+    
+    <!-- Personal Information Section -->
+    <div class="form-section">
+      <h3 class="section-title">
+        <i class="fa fa-user"></i>
+        Personal Information
+      </h3>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input 
+              type="text" 
+              id="firstName"
+              formControlName="firstName"
+              class="form-control"
+              placeholder="Enter your first name"
+              [class.is-invalid]="isFieldInvalid('firstName')">
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('firstName')">
+              First name is required
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input 
+              type="text" 
+              id="lastName"
+              formControlName="lastName"
+              class="form-control"
+              placeholder="Enter your last name"
+              [class.is-invalid]="isFieldInvalid('lastName')">
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('lastName')">
+              Last name is required
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input 
+              type="email" 
+              id="email"
+              formControlName="email"
+              class="form-control"
+              placeholder="Enter your email address"
+              [class.is-invalid]="isFieldInvalid('email')">
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
+              <span *ngIf="appointmentForm.get('email')?.errors?.['required']">Email is required</span>
+              <span *ngIf="appointmentForm.get('email')?.errors?.['email']">Please enter a valid email</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input 
+              type="tel" 
+              id="phone"
+              formControlName="phone"
+              class="form-control"
+              placeholder="Enter your phone number"
+              [class.is-invalid]="isFieldInvalid('phone')">
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('phone')">
+              Phone number is required
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input 
+              type="date" 
+              id="dateOfBirth"
+              formControlName="dateOfBirth"
+              class="form-control">
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" formControlName="gender" class="form-control">
+              <option value="">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Appointment Details Section -->
+    <div class="form-section">
+      <h3 class="section-title">
+        <i class="fa fa-calendar-alt"></i>
+        Appointment Details
+      </h3>
+      
+
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="appointmentDate">Preferred Date *</label>
+            <input 
+              type="date" 
+              id="appointmentDate"
+              formControlName="appointmentDate"
+              class="form-control"
+              [min]="minDate"
+              [class.is-invalid]="isFieldInvalid('appointmentDate')">
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('appointmentDate')">
+              Please select an appointment date
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="appointmentTime">Preferred Time *</label>
+            <select 
+              id="appointmentTime" 
+              formControlName="appointmentTime" 
+              class="form-control"
+              [class.is-invalid]="isFieldInvalid('appointmentTime')">
+              <option value="">Select Time Slot</option>
+              <option value="09:00">09:00 AM</option>
+              <option value="09:30">09:30 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="10:30">10:30 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="11:30">11:30 AM</option>
+              <option value="14:00">02:00 PM</option>
+              <option value="14:30">02:30 PM</option>
+              <option value="15:00">03:00 PM</option>
+              <option value="15:30">03:30 PM</option>
+              <option value="16:00">04:00 PM</option>
+              <option value="16:30">04:30 PM</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="isFieldInvalid('appointmentTime')">
+              Please select a time slot
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="appointmentType">Appointment Type</label>
+        <select id="appointmentType" formControlName="appointmentType" class="form-control">
+          <option value="">Select Appointment Type</option>
+          <option value="consultation">General Consultation</option>
+          <option value="follow-up">Follow-up Visit</option>
+          <option value="emergency">Emergency</option>
+          <option value="checkup">Regular Checkup</option>
+          <option value="procedure">Medical Procedure</option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Medical Information Section -->
+    <div class="form-section">
+      <h3 class="section-title">
+        <i class="fa fa-heartbeat"></i>
+        Medical Information
+      </h3>
+      
+      <div class="form-group">
+        <label for="chiefComplaint">Chief Complaint / Reason for Visit *</label>
+        <textarea 
+          id="chiefComplaint"
+          formControlName="chiefComplaint"
+          class="form-control"
+          rows="3"
+          placeholder="Please describe your symptoms or reason for the appointment"
+          [class.is-invalid]="isFieldInvalid('chiefComplaint')"></textarea>
+        <div class="invalid-feedback" *ngIf="isFieldInvalid('chiefComplaint')">
+          Please describe your reason for the visit
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="medicalHistory">Medical History</label>
+            <textarea 
+              id="medicalHistory"
+              formControlName="medicalHistory"
+              class="form-control"
+              rows="3"
+              placeholder="Any previous medical conditions, surgeries, or ongoing treatments"></textarea>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="currentMedications">Current Medications</label>
+            <textarea 
+              id="currentMedications"
+              formControlName="currentMedications"
+              class="form-control"
+              rows="3"
+              placeholder="List any medications you are currently taking"></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="allergies">Allergies</label>
+            <textarea 
+              id="allergies"
+              formControlName="allergies"
+              class="form-control"
+              rows="2"
+              placeholder="Any known allergies to medications, foods, or other substances"></textarea>
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="emergencyContact">Emergency Contact</label>
+            <input 
+              type="text" 
+              id="emergencyContact"
+              formControlName="emergencyContact"
+              class="form-control"
+              placeholder="Emergency contact name and phone number">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+    <!-- Additional Information Section -->
+    <div class="form-section">
+      <h3 class="section-title">
+        <i class="fa fa-info-circle"></i>
+        Additional Information
+      </h3>
+      
+      <div class="form-group">
+        <label for="additionalNotes">Additional Notes</label>
+        <textarea 
+          id="additionalNotes"
+          formControlName="additionalNotes"
+          class="form-control"
+          rows="3"
+          placeholder="Any additional information you would like to share with our medical team"></textarea>
+      </div>
+      
+      <div class="form-group">
+        <div class="custom-control custom-checkbox">
+          <input 
+            type="checkbox" 
+            id="terms" 
+            formControlName="terms"
+            class="custom-control-input"
+            [class.is-invalid]="isFieldInvalid('terms')">
+          <label class="custom-control-label" for="terms">
+            I agree to the <a href="#" target="_blank">Terms and Conditions</a> and <a href="#" target="_blank">Privacy Policy</a> *
+          </label>
+          <div class="invalid-feedback" *ngIf="isFieldInvalid('terms')">
+            Please accept the terms and conditions
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="custom-control custom-checkbox">
+          <input 
+            type="checkbox" 
+            id="reminderNotifications" 
+            formControlName="reminderNotifications"
+            class="custom-control-input">
+          <label class="custom-control-label" for="reminderNotifications">
+            Send me appointment reminders via email and SMS
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Form Actions -->
+    <div class="form-actions">
+      <div class="row">
+        <div class="col-md-6">
+          <button 
+            type="button" 
+            class="btn btn-outline-secondary btn-block"
+            (click)="resetForm()">
+            <i class="fa fa-refresh"></i>
+            Reset Form
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button 
+            type="submit" 
+            class="btn btn-primary btn-block"
+            [disabled]="appointmentForm.invalid || isSubmitting">
+            <i class="fa fa-calendar-plus" *ngIf="!isSubmitting"></i>
+            <i class="fa fa-spinner fa-spin" *ngIf="isSubmitting"></i>
+            {{ isSubmitting ? 'Booking Appointment...' : 'Book Appointment' }}
+          </button>
+        </div>
+      </div>
+    </div>
+    
+  </form>
+  
+  <!-- Success Message -->
+  <div class="alert alert-success" *ngIf="showSuccessMessage">
+    <i class="fa fa-check-circle"></i>
+    <strong>Appointment Booked Successfully!</strong>
+    <p>We have received your appointment request. You will receive a confirmation email shortly with the appointment details.</p>
+  </div>
+  
+  <!-- Error Message -->
+  <div class="alert alert-danger" *ngIf="showErrorMessage">
+    <i class="fa fa-exclamation-triangle"></i>
+    <strong>Booking Failed!</strong>
+    <p>There was an error processing your appointment request. Please try again or contact our support team.</p>
+  </div>
+  
+</div>

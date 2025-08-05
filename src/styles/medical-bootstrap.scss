@@ -1,0 +1,105 @@
+// Medical Bootstrap 5 Customizations
+// ===================================
+
+// Medical Color Variables
+$medical-primary: #1e40af;
+$medical-primary-light: #3b82f6;
+$medical-primary-dark: #1d4ed8;
+$medical-secondary: #059669;
+$medical-success: #10b981;
+$medical-warning: #d97706;
+$medical-danger: #dc2626;
+$medical-info: #2563eb;
+
+// Medical Typography
+$font-family-medical: 'Inter', system-ui, -apple-system, sans-serif;
+$font-size-medical-sm: 0.875rem;
+$font-size-medical-base: 1rem;
+$font-size-medical-lg: 1.125rem;
+$font-size-medical-xl: 1.25rem;
+
+// Medical Spacing
+$spacer-medical: 1rem;
+$spacer-medical-sm: 0.5rem;
+$spacer-medical-lg: 1.5rem;
+$spacer-medical-xl: 2rem;
+
+// Medical Border Radius
+$border-radius-medical: 0.5rem;
+$border-radius-medical-lg: 0.75rem;
+
+// Medical Shadows
+$box-shadow-medical: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$box-shadow-medical-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+// Override Bootstrap variables
+$primary: $medical-primary;
+$secondary: $medical-secondary;
+$success: $medical-success;
+$warning: $medical-warning;
+$danger: $medical-danger;
+$info: $medical-info;
+
+$font-family-base: $font-family-medical;
+$border-radius: $border-radius-medical;
+$box-shadow: $box-shadow-medical;
+
+// Medical Component Customizations
+.btn-medical {
+  background-color: $medical-primary;
+  border-color: $medical-primary;
+  color: white;
+  font-weight: 500;
+  border-radius: $border-radius-medical;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid transparent;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.5;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  
+  &:hover {
+    background-color: $medical-primary-dark;
+    border-color: $medical-primary-dark;
+  }
+}
+
+.card-medical {
+  border-radius: $border-radius-medical-lg;
+  box-shadow: $box-shadow-medical;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.navbar-medical {
+  background-color: $medical-primary;
+  box-shadow: $box-shadow-medical;
+}
+
+.sidebar-medical {
+  background-color: #f8fafc;
+  border-right: 1px solid #e2e8f0;
+}
+
+// Medical Status Classes
+.status-critical {
+  color: $medical-danger;
+  background-color: rgba($medical-danger, 0.1);
+}
+
+.status-warning {
+  color: $medical-warning;
+  background-color: rgba($medical-warning, 0.1);
+}
+
+.status-healthy {
+  color: $medical-success;
+  background-color: rgba($medical-success, 0.1);
+}
+
+.status-info {
+  color: $medical-info;
+  background-color: rgba($medical-info, 0.1);
+}
